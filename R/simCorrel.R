@@ -56,9 +56,12 @@ PC3 = rpca$x[,3]
 
 pcaRotated= as.data.frame(cbind(PC1, PC2, PC3,rainbowColor))
 
-plot3d(pcaRotated, col=pcaRotated$rainbowColor))
+plot3d(pcaRotated, col=pcaRotated$rainbowColor)
 
 # 解釈させる
-
+scoreMath = y5$Math
+scoreScience = y5$Science
+scoreJapanese = y5$Japanese
+beforeAfter= as.data.frame(cbind(PC1, PC2, PC3,scoreMath, scoreScience,scoreJapanese ))
 
 
