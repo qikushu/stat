@@ -8,7 +8,8 @@ m <- c(60, 60, 60, 60, 60)
 sigma = as.matrix(d)
 colnames(sigma) = c()
 rownames(sigma) = c()
-y <- rmvnorm(100, m, sigma*300, method = "chol") 
+y <- rmvnorm(100, m, sigma*300, method = "chol")
+colnames(y)=colnames(d)
 
 # 100点を超えた場合は100点にする
 y[y > 100] = 100
