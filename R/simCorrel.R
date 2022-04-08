@@ -16,7 +16,16 @@ y[y > 100] = 100
 # マイナス点になった場合は0店にする
 y[y < 0] = 0
 
-library(rgl)
+# 国語数学理科の三次元データでデモンストレーションする
 y2 = y[,c("Japanese","Math", "Science")]
-plot3d(y2)
+#平均点作成
+meanScore = apply(y2, 1, mean)
+y3 = as.data.frame(cbind(y2,meanScore))
+#平均点でソート
+y4 = y3[order(y3$meanScore),]
+#色のグラデーション作成
+rainbowColor = heat.colors(nrow(y4))
+y5 = as.data.frame(cbind(y4,rainbowColor))
 
+library(rgl)
+plot3d(y5, col=y5$rainbowColor))
