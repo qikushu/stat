@@ -1,4 +1,4 @@
-d = read.table("https://raw.githubusercontent.com/qikushu/stat/master/R/correlMatrixBySubject.txt", comment.char="#", head=T, row.names = "教科", fileEncoding = "UTF-8-BOM")
+d = read.table("https://raw.githubusercontent.com/qikushu/stat/master/R/correlMatrixBySubject.txt", comment.char="#", head=T, row.names = "Subject", fileEncoding = "UTF-8-BOM")
 
 #install.packages("mvtnorm")
 library(mvtnorm)
