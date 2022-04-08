@@ -15,5 +15,7 @@ y[y > 100] = 100
 # マイナス点になった場合は0店にする
 y[y < 0] = 0
 
-
+library(rgl)
+y2 = y[,c("Japanese","Math", "Science")]
+plot3d(y2)
 
