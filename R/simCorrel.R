@@ -46,10 +46,6 @@ plot(y5$Math, y5$Japanese, xlab = "Math", ylab="Japanese", col=y5$rainbowColor, 
 # 数学と理科
 plot(y5$Math, y5$Science, xlab = "Math", ylab="JapScienceanese", col=y5$rainbowColor, pch=20)
 
-# 三次元plot
-library(rgl)
-plot3d(y5, col=y5$rainbowColor)
-
 # 主成分分析
 rpca=prcomp(x=y4,scale=T)
 # 第1主成分
@@ -58,10 +54,6 @@ PC1 = rpca$x[,1]
 PC2 = rpca$x[,2]
 # 第3主成分
 PC3 = rpca$x[,3]
-
-pcaRotated= as.data.frame(cbind(PC1, PC2, PC3,rainbowColor))
-plot3d(pcaRotated, col=pcaRotated$rainbowColor)
-
 
 # 主成分スコアの相関係数を見てみる
 # 第一主成分と第二主成分
@@ -91,9 +83,12 @@ plot(PC2, scoreJapanese)
 cor(PC2, scoreJapanese)
 
 
+# 三次元plot
+#library(rgl)
+#plot3d(y5, col=y5$rainbowColor)
 
+#pcaRotated= as.data.frame(cbind(PC1, PC2, PC3,rainbowColor))
+#plot3d(pcaRotated, col=pcaRotated$rainbowColor)
 
-
-beforeAfter= as.data.frame(cbind(PC1, PC2, PC3,scoreMath, scoreScience,scoreJapanese ))
 
 
