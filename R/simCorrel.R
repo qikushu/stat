@@ -43,7 +43,7 @@ plot(y5$Math, y5$Science, xlab = "Math", ylab="JapScienceanese", col=y5$rainbowC
 
 # 三次元plot
 library(rgl)
-plot3d(y5, col=y5$rainbowColor))
+plot3d(y5, col=y5$rainbowColor)
 
 # 主成分分析
 rpca=prcomp(x=y4,scale=T)
