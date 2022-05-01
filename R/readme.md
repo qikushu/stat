@@ -16,21 +16,24 @@ make install
 ## あれあれ？pngが出力できない
 Rにてcapabilities()関数で取り扱える画像ファイルのフォーマットを確認
 PNGがFALSE, JPEGもFALSEだった。すでに過去のことなので、画面は覚えていない。
-過去にcairoという仮想デバイスをOS側にインストールするんだったかな、と思い出そうとしたが、ググると
+
+
+過去に同じトラブルが起きたときに、cairoという仮想デバイス関係をいじったかな、と思ったのでいろいろググってみたが、
 R 4.1以前はX11のサポートでcairoは動くんだけど、4.2はいらないよ、と書いてあった。
-解決しそうにないけど、とりあえずやってみる
+X関係はよく知らないが、関係ありそうなライブラリーをインストール。
 
 ```
 sudo apt-get install xvfb
-sudo apt-get install libjpeg-dev
 sudo apt install xorg-dev
 ./configure --prefix=$HOME/R --with-pcre1
 make
 ```
 makeでコケる。エラーメッセージをググると、java関係のエラー。openjdkが11だったので17にあげたらmakeはうまくいった。
-makeをしたディレクトリのbinディレクトリの中のRを起動
-
-PNG がFALSE。まだまだうまくいかない。`libpng`が入っていないケースもあるとのこと。
+makeをしたディレクトリのbinディレクトリの中のRを起動してから、`capabilities()`を実行した。
+```
+PNG FALSE
+```
+まだまだうまくいかない。`libpng`が入っていないケースもあるとのこと。
 ```
 sudo apt install -y libpng-dev
 ```
@@ -52,6 +55,10 @@ capabilities()
     libcurl 
        TRUE 
 
+# おお、うまくいったのかな
+png("aa.png")
+plot(iris)
+dev.off()
 ```
 となり、うまくいったと思います
 
