@@ -1,4 +1,4 @@
-variety	block	yield
+Variety	Block	Yield
 A	A	288.1451
 A	A	315.3213
 A	A	300.7786
