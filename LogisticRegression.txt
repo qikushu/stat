@@ -1,4 +1,4 @@
-id	Chemical	Dead
+id	Chemical	Result
 1	0.3	Alive
 2	0.3	Alive
 3	0.3	Alive
