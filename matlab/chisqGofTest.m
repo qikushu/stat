@@ -1,4 +1,4 @@
-function [h, p, st] = chisqTest(e, o, alpha)
+function [h, p, st] = chisqGofTest(e, o, alpha)
     arguments
         e
         o
