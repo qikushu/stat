@@ -1,5 +1,20 @@
 #!/usr/bin/perl
 
+#################################
+# Running in a Bash shell on a Linux system.
+# Usage: less [in.hmp.txt] | perl hmp2structure.pl > data.str
+
+# Parameters:
+# - in.vcf.gz: Path to the hapmap file.
+
+# Assuming the total length of the rice (Oryza sativa) genome (IRGSP1) is 373,245,519 base pairs (bp),
+# and that the entire RFLP map constructed in the rice F2 population spans a total length of 1521.6 centimorgans (cM),
+# we estimate a conversion factor of 245,298 bp per cM.
+# This value can be approximated as 250,000 bp per cM or 0.000004 cM per bp for simplicity.
+# In this script, we set the ratio as $ratio = 0.000004;.
+# Feel free to adjust this value as needed.
+#################################
+
 use warnings;
 use strict;
 
