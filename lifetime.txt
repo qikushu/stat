@@ -1,4 +1,4 @@
-lifeFemale	lifeMale	alcohol	smokeFemal	smokeMale	GDP
+lifeFemale	lifeMale	alcohol	smokeFemale	smokeMale	GDP
 73	69	2.01	4	40.5	6000
 72	70	0.15	0.3	29.9	5940
 78	72	8.4	25.4	34.6	11670
